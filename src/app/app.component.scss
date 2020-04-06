@@ -1,0 +1,23 @@
+.grid-container {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-rows: 90px calc(100vh - 170px) 80px;
+    width: 100vw;
+    height: 100vh;
+}
+
+.header {
+    background-color: #1ba0f7;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    img {
+        width: 64px;
+        height: 64px;
+    }
+}
+
+.footer {
+    background-color: #1ba0f7;
+}

@@ -1,0 +1,25 @@
+@mixin card-border {
+    padding: 5px 12px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 14px 0 rgba(0, 0, 14, 0.1);
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+
+    .info-def {
+        @include card-border;
+
+        .css-logo {
+            width: 64px;
+            height: 64px;
+        }
+    }
+
+    .info-details {
+        @include card-border;
+    }
+}
