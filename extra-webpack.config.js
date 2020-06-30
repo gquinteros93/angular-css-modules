@@ -45,6 +45,4 @@ module.exports = (config, options) => {
     config.plugins.splice(index);
     config.plugins.push(new AngularCompilerPlugin.AngularCompilerPlugin(oldOptions));
     return config;
-
-    return config;
 };
