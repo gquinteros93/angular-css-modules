@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoComponent implements OnInit {
   public postcssPlugins: any[];
-  constructor() { }
+  public matSlideValue: boolean = false;
+  constructor() {}
 
   ngOnInit() {}
 

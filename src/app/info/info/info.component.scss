@@ -10,16 +10,20 @@
     flex-direction: column;
     padding: 0 10px;
 
-    .info-def {
+    .info-card {
         @include card-border;
-
-        .css-logo {
-            width: 64px;
-            height: 64px;
-        }
     }
 
-    .info-details {
-        @include card-border;
+    .css-logo {
+        width: 64px;
+        height: 64px;
+    }
+    
+    .slide-on {
+        color: #1ba0f7;
+    }
+
+    .slide-off {
+        color: red;
     }
 }

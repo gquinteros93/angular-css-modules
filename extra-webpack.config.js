@@ -21,21 +21,29 @@ module.exports = (config, options) => {
     config.module.rules.unshift(
         {
             test: /\.html$/,
-            use: [
-                { loader: 'raw-loader' },
-                {
-                    loader: 'posthtml-loader',
-                    options: {
-                        config: {
-                            path: './',
-                            ctx: {
-                                include: { ...options },
-                                content: { ...options }
-                            }
-                        },
-                    }
-                },
-            ]
+            use:(info) => { 
+                return [
+                    { loader: 'raw-loader' },
+                    {
+                        loader: path.resolve('./scripts/loaders/html-css-modules.loader.js'),
+                        options: {
+                            file: info.resource
+                        }
+                    },
+                    {
+                        loader: 'posthtml-loader',
+                        options: {
+                            config: {
+                                path: './',
+                                ctx: {
+                                    include: { ...options },
+                                    content: { ...options }
+                                }
+                            },
+                        }
+                    },
+                ]
+            }
         },
     );
 

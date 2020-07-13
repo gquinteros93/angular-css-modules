@@ -1,5 +1,5 @@
 <div css-module="info-container">
-    <div css-module="info-def">
+    <div css-module="info-card">
         <a href="https://github.com/css-modules/css-modules" target="_blank">
             <img css-module="css-logo" src="assets/img/css-modules-logo.png">
         </a>
@@ -8,11 +8,27 @@
             CSS files in which all css-module names and animation names are scoped locally by default.
         </p>
     </div>
-    <div css-module="info-details">
+    <div css-module="info-card">
         <h3>How to implement CSS Modules in Angular?</h3>
         <p>
             Thanks to <a href="https://github.com/postcss/postcss-loader" target="_blank">postcss-loader</a> and the plugin <a href="https://github.com/css-modules/postcss-modules" target="_blank">postcss-modules</a>.<br>
             Also, thanks to <a href="https://github.com/posthtml/posthtml-loader" target="_blank">posthtml-loader</a> and the plugin <a href="https://github.com/posthtml/posthtml-css-modules" target="_blank">posthtml-css-modules</a>
+        </p>
+    </div>
+    <div css-module="info-card">
+        <h3>How to use CSS Modules in ngClass directive?</h3>
+        <p>
+            Like this: <mat-slide-toggle [(ngModel)]="matSlideValue">Slide me!</mat-slide-toggle>
+        </p>
+        <p>See the result:</p>
+        <p [ngClass]="{'<%= getHashedClass(`slide-on`) %>': matSlideValue}">
+            If Slide is On I will be blue
+        </p>
+        <p [ngClass]="{'<%= getHashedClass(`slide-off`) %>': !matSlideValue}">
+            If Slide is Off I will be red
+        </p>
+        <p [className]="matSlideValue ? '<%= getHashedClass(`slide-on`) %>' : '<%= getHashedClass(`slide-off`) %>'">
+            Slide On = blue and Slide off = red
         </p>
     </div>
 </div>
