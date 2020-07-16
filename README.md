@@ -9,6 +9,7 @@ Check out the live demo: https://angular-css-modules.herokuapp.com/
 # Article
 
 If you would like to see the step by step of how to use CSS Module in an Angular application
+
 I recommend you to read my article in: 
 
 ## Development server
