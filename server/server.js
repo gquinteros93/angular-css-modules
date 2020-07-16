@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 const publicPath = path.resolve(__dirname, '../dist/angular-css-modules');
 app.use(express.static(publicPath));
 app.get('/*', function(req,res) {
-    res.sendFile(path.join(__dirname+'../dist/angular-css-module/index.html'));
+    res.sendFile(path.resolve(__dirname, '../dist/angular-css-module/index.html'));
   }
 );
   
