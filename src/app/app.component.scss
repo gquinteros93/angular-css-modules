@@ -1,12 +1,20 @@
 .grid-container {
     display: grid;
-    grid-template-rows: auto;
-    grid-template-rows: 90px calc(100vh - 170px) 80px;
-    width: 100vw;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 90px auto 80px;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+.main-content {
+    grid-area: main;
 }
 
 .header {
+    grid-area: header;
     background-color: #1ba0f7;
     display: flex;
     align-items: center;
@@ -19,5 +27,6 @@
 }
 
 .footer {
+    grid-area: footer;
     background-color: #1ba0f7;
 }
