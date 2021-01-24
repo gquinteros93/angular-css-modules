@@ -7,7 +7,7 @@ module.exports = (config, options) => {
 
     /*  SCSS EXTEND */
     const scssRule = config.module.rules.find(x => x.test.toString().includes('scss'));
-    const postcssLoader = scssRule.use.find(x => x.loader === 'postcss-loader');
+    const postcssLoader = scssRule.use.find(x => x.loader.toString().includes('postcss-loader'));
     const pluginFunc = postcssLoader.options.plugins;
     const newPluginFunc = function () {
         var plugs = pluginFunc.apply(this, arguments);
