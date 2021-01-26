@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "node server/server.js",
     "start:app": "ng serve angular-css-modules",
-    "start:app:plain": "ng serve angular-css-modules-plain",
+    "start:app-plain": "ng serve angular-css-modules-plain",
     "build": "ng build angular-css-modules",
     "test": "ng test angular-css-modules",
     "lint": "ng lint angular-css-modules",
