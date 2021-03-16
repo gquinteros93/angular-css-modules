@@ -2,19 +2,18 @@ const postcssModules = require('postcss-modules');
 const path = require('path');
 const AngularWebpackPlugin = require('@ngtools/webpack/src/ivy/plugin');
 
-
 module.exports = (config, options) => {
 
     /*  SCSS EXTEND */
     const scssRule = config.module.rules.find(x => x.test.toString().includes('scss'));
     const postcssLoader = scssRule.use.find(x => x.loader.toString().includes('postcss-loader'));
-    const pluginFunc = postcssLoader.options.postcssOptions.plugins;
+    const pluginFunc = postcssLoader.options.postcssOptions;
     const newPluginFunc = function () {
         var plugs = pluginFunc.apply(this, arguments);
-        plugs.splice(plugs.length - 1, 0, postcssModules({ generateScopedName: "[hash:base64:5]" }));
+        plugs.plugins.splice(plugs.plugins.length - 1, 0, postcssModules({ generateScopedName: "[hash:base64:5]" }));
         return plugs;
     }
-    postcssLoader.options.postcssOptions.plugins = newPluginFunc;
+    postcssLoader.options.postcssOptions = newPluginFunc;
 
     /*  HTML EXTEND */
 

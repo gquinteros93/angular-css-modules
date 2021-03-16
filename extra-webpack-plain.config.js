@@ -1,7 +1,7 @@
 const path = require('path');
 const AngularWebpackPlugin = require('@ngtools/webpack/src/ivy/plugin');
 
-module.exports = (config, options) => {
+module.exports = (config, _) => {
 
     /*  HTML EXTEND */
     config.module.rules.unshift(
