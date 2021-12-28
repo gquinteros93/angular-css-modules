@@ -46,7 +46,7 @@ module.exports = (config, options) => {
         },
     );
 
-    const index = config.plugins.findIndex(p => p instanceof AngularWebpackPlugin.AngularWebpackPlugin);
+    const index = config.plugins?.findIndex(p => typeof p === 'object' && p.constructor.name === 'AngularWebpackPlugin');
     const oldOptions = config.plugins[index].pluginOptions;
     oldOptions.directTemplateLoading = false;
     config.plugins.splice(index);
